@@ -1,8 +1,19 @@
-const fibonacci = num => {
-
-    if (num === 1) return 0
-    if (num === 2) return 1 
-    let res = fibonacci(num - 1) + fibonacci(num - 2)
-    return res
+const buildCharObjects = str => {
+    str = str.toLowerCase()
+    let charObj = {}
+    for (let i=0; i<str.length; i++) {
+        if (/[a-zа-я]/.test(str[i])) charObj[str[i]] = charObj[str[i]] + 1 || 1
+    }
+    return charObj
 }
-console.log(fibonacci(23))
+const polindrom = (str1, str2) => {
+    let aCharObj = buildCharObjects(str1)
+    let bCharObj = buildCharObjects(str2)
+    if (Object.keys(aCharObj).length !== Object.keys(bCharObj).length) return false
+    if (str1 === '' || str2 === '') return false
+    for (let char in aCharObj) {
+        if (aCharObj[char] !== bCharObj[char]) return false
+    }
+    return true
+}
+console.log(polindrom('dd.....ЖОПА...l......m','lD>>>|жопа|=\\Md'))
