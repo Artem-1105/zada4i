@@ -5,7 +5,12 @@
   "main": "index.js",
   "dependencies": {
     "array": "^0.4.3",
+    "keys": "^0.1.2",
     "lodash": "^4.17.21",
+    "match": "^1.2.10",
+    "objects": "^0.3.0",
+    "regexp": "^1.0.0",
+    "replace": "^1.2.1",
     "string": "^3.3.3",
     "tolowercase": "^1.0.0"
   },
