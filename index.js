@@ -1,17 +1,8 @@
 const fibonacci = num => {
 
-    let res = 0
-
-    let fibarr = [0,1]
     if (num === 1) return 0
-    if (num === 2) return 1
-    for (let i=2; i<num; i++) {
-
-        res = fibarr[i-1] +fibarr[i-2]
-
-        fibarr.push(res)
-    }
-    
+    if (num === 2) return 1 
+    let res = fibonacci(num - 1) + fibonacci(num - 2)
     return res
 }
-console.log(fibonacci(4))
+console.log(fibonacci(23))
